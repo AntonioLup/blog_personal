@@ -5,7 +5,6 @@ import AboutPage from "./components/AboutPage";
 import ServicePage from "./components/Service";
 import ArticleDetails from "./components/ArticleDetails";
 import Error from "./components/404";
-import AddArticleForm from "./components/AddArticle";
 
 const App = () => {
   return (
