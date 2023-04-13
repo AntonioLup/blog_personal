@@ -1,0 +1,22 @@
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1 ;
+    padding: 2rem;
+    flex-wrap: wrap;
+
+    ul{
+        display: flex;
+        gap: 14px;
+
+        li{
+            list-style-type: none;
+            transition: color 0.5s ease;
+
+            &:hover{
+                color:aqua;
+                cursor: pointer;
+            }
+        }
+    }
+}

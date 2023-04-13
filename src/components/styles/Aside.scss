@@ -1,0 +1,32 @@
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid rgba(255, 0, 0, 0.337);
+
+  nav {
+    position: sticky;
+    top: 15px;
+    margin: 6rem 0;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      list-style-type: none;
+      margin: 1rem;
+      padding: 0.5rem;
+      border-radius: 14px;
+     
+      border: 1px solid rgba(255, 0, 0, 0.273);
+      transition: background-color 0.3s ease;
+      &:hover{
+        background-color: rgba(255, 0, 0, 0.349);
+        cursor: pointer;
+      }
+    }
+    .navitem {
+      display: flex;
+      gap: 4px;
+    }
+  }
+}

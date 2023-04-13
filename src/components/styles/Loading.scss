@@ -1,0 +1,25 @@
+/* Estilos CSS para la animación de carga */
+.loading-spinner {
+    border: 5px solid #f3f3f3; /* Color del borde de la animación */
+    border-top: 5px solid #3498db; /* Color del borde de la parte superior de la animación */
+    border-radius: 50%; /* Forma circular de la animación */
+    width: 40px; /* Ancho de la animación */
+    height: 40px; /* Altura de la animación */
+    animation: spin 1s linear infinite; /* Animación de rotación */
+  }
+  
+  /* Animación de rotación */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Estilos CSS para el contenedor del componente de carga */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20vh; /* Altura del contenedor del componente de carga */
+  }

@@ -1,0 +1,8 @@
+.grid-container{
+    display: grid;
+    
+    width: 100%;
+    max-width: 1024px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
