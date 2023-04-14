@@ -7,12 +7,8 @@ import Footer from "./Footer";
 import useFetch from "./hook/useFetch";
 import LoadingComponent from "./Loading";
 import { Toaster } from "react-hot-toast";
-import ReactMarkdown from "react-markdown";
-import MarkdownIt from "markdown-it";
-import markdownItResponsive from "markdown-it-responsive";
-import gfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
-import MarkdownJsx from "markdown-to-jsx";
+
+
 import MarkdownComponent from "./ReactMarkdownCustom";
 
 
@@ -53,7 +49,7 @@ const ArticleDetails: React.FC = () => {
         </picture>
         <h1 className="navigation">{data.data.attributes.Title}</h1>
 
-        <div className="markdown-container">
+        <div style={{ width: '100%', overflowWrap: 'break-word' }}>
         <MarkdownComponent markdownContent={data.data.attributes.Content} />
 
             
