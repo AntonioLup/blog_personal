@@ -1,15 +1,7 @@
-import ReactMarkdown from "markdown-to-jsx";
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
-import marked from "marked-react";
-import { parse } from "node-html-parser";
-import MarkdownIt from "markdown-it";
-import { mdx } from "@mdx-js/react";
-import { renderToString } from "react-dom/server";
-import remarkGfm from 'remark-gfm'
-import rehypeRaw from 'rehype-raw'
+
 import Markdown from 'markdown-to-jsx';
 
-import regexp from "markdown-it-regexp";
 import { MDXProvider } from "@mdx-js/react";
 
 interface MarkdownProps {
@@ -21,7 +13,7 @@ const MarkdownComponent: React.FC<MarkdownProps> = ({ markdownContent }) => {
     // Agrega tus estilos CSS aquí para hacer el contenido Markdown responsive
     // por ejemplo:
     width: "100%",
-    padding: "16px",
+    
   };
 
 
@@ -33,7 +25,7 @@ const MarkdownComponent: React.FC<MarkdownProps> = ({ markdownContent }) => {
       <code
         style={{
           backgroundColor: "#f0f0f0",
-          padding: "2px 4px",
+         
           borderRadius: "4px",
         }}
       >

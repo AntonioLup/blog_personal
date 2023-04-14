@@ -8,9 +8,7 @@ import useFetch from "./hook/useFetch";
 import LoadingComponent from "./Loading";
 import { Toaster } from "react-hot-toast";
 
-
 import MarkdownComponent from "./ReactMarkdownCustom";
-
 
 const ArticleDetails: React.FC = () => {
   const navigation = useNavigate();
@@ -30,32 +28,35 @@ const ArticleDetails: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
-  if (!data || !data.data || !data.data.attributes || !data.data.attributes.Content) {
+  if (
+    !data ||
+    !data.data ||
+    !data.data.attributes ||
+    !data.data.attributes.Content
+  ) {
     return <div>Loading data...</div>;
   }
 
-  
-
   const dataFetch = data && data.data && (
-    <article className="articlewrapper" key={id}>
-      <div className="wrapper">
-        <picture className="picwrapper">
-          <img
-            decoding="async"
-            loading="lazy"
-            src={data.data.attributes.file.data.attributes.url}
-            alt={data.data.attributes.Title}
-          />
-        </picture>
-        <h1 className="navigation">{data.data.attributes.Title}</h1>
+    <>
+      <article className="articlewrapper" key={id}>
+        <div className="wrapper">
+          <picture className="picwrapper">
+            <img
+              decoding="async"
+              loading="lazy"
+              src={data.data.attributes.file.data.attributes.url}
+              alt={data.data.attributes.Title}
+            />
+          </picture>
+          <h1 className="navigation">{data.data.attributes.Title}</h1>
 
-        <div style={{ width: '100%', overflowWrap: 'break-word' }}>
-        <MarkdownComponent markdownContent={data.data.attributes.Content} />
-
-            
+          <div style={{ width: "100%", overflowWrap: "break-word" }}>
+            <MarkdownComponent markdownContent={data.data.attributes.Content} />
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </>
   );
 
   const load = loading ? <LoadingComponent /> : dataFetch;
@@ -71,7 +72,9 @@ const ArticleDetails: React.FC = () => {
       </div>
 
       <main className="main-container">
-        <section className="content">{load}</section>
+        <section className="content">{load}
+        </section>
+      
         <InfoAside />
       </main>
       <Toaster position="bottom-right" reverseOrder={false} />
