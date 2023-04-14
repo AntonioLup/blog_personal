@@ -1,23 +1,19 @@
 .main-container {
   display: flex;
- 
-  
+
   flex-wrap: wrap;
   border: 1px solid red;
-  section{
+  section {
     margin: 0 auto;
-  
-   
   }
 
   .content {
     display: flex;
     flex-direction: column;
-    margin: 0 0.5rem;
+
     flex: 1 1 400px;
-    width: 100%; /* Cambiar el ancho al 100% */
+
     .logocontainer {
-      
       padding: 2rem;
 
       .logo {
@@ -26,53 +22,43 @@
         pointer-events: none;
       }
     }
-    .wrapper{
-        flex: 1;
-        margin: 0 0.5rem; /* Reduce el margen */
-        width: 90%;
-        h1{
-            margin: 1rem 0;
-        }
-        h2{
-            margin: 0;
-            text-transform: italic;
-        }
-        .desc{
-            margin-bottom: 3.5rem;
-        }
-        .span{
-            background-color: rgba(220, 20, 60, 0.148);
-        }
+    .wrapper {
+      flex-basis: 100%;
+     
+
+      h1 {
+        margin: 1rem 0;
+      }
+      h2 {
+        margin: 0;
+        text-transform: italic;
+      }
+      .desc {
+        margin-bottom: 3.5rem;
+      }
+      .span {
+        background-color: rgba(220, 20, 60, 0.148);
+      }
     }
   }
 }
 
-.picwrapper{
-  display: flex;
-  flex: 1 1 320px;
-  margin: 1rem 0;
-
-  border: 1px solid red;
-  overflow: hidden;
-  
-  img{
+.picwrapper {
+  img {
     display: block;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
     object-fit: cover;
     border: 1px solid red;
-
+    height: auto;
   }
 }
 
-.nav-link{
+.nav-link {
   width: 20px;
   padding: 0.35rem 0.5rem;
   font-size: 2rem;
   margin: 1rem;
-  border-radius:50%
-  
-  
+  border-radius: 50%;
 }
 
 @keyframes spin {
@@ -81,5 +67,22 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.markdown-container {
+  display: flex;
+  width: 100%;
+  .markdown {
+    flex: 1 1 200px;
+    & > * {
+      all: revert;
+      max-width: 100%;
+    }
+
+    & p {
+      line-height: 1.5;
+    }
+    /* Reglas de diseño responsivo para pantallas más pequeñas */
   }
 }

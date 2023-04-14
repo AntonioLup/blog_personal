@@ -5,10 +5,17 @@ import InfoAside from "./InfoAside";
 import "./styles/HomePage.scss";
 import Footer from "./Footer";
 import useFetch from "./hook/useFetch";
-import ReactMarkdown from "react-markdown";
-import imgDefault from "../assets/aest.jpg";
 import LoadingComponent from "./Loading";
 import { Toaster } from "react-hot-toast";
+import ReactMarkdown from "react-markdown";
+import MarkdownIt from "markdown-it";
+import markdownItResponsive from "markdown-it-responsive";
+import gfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import MarkdownJsx from "markdown-to-jsx";
+import MarkdownComponent from "./ReactMarkdownCustom";
+
+
 const ArticleDetails: React.FC = () => {
   const navigation = useNavigate();
 
@@ -17,21 +24,39 @@ const ArticleDetails: React.FC = () => {
   const { loading, data, error } = useFetch(
     `https://blog-personalblog.up.railway.app/api/posts/${id}?populate=*`
   );
+  console.log(data);
+
+  if (loading) {
+    return <LoadingComponent />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!data || !data.data || !data.data.attributes || !data.data.attributes.Content) {
+    return <div>Loading data...</div>;
+  }
+
+  
 
   const dataFetch = data && data.data && (
     <article className="articlewrapper" key={id}>
-      <div>
-        <div className="wrapper">
-          <picture className="picwrapper">
-            <img
-            decoding="async" loading="lazy"
-              src={data.data.attributes.file.data.attributes.url}
-              alt={data.data.attributes.Title}
-            />
-          </picture>
-          <h1 className="navigation">{data.data.attributes.Title}</h1>
+      <div className="wrapper">
+        <picture className="picwrapper">
+          <img
+            decoding="async"
+            loading="lazy"
+            src={data.data.attributes.file.data.attributes.url}
+            alt={data.data.attributes.Title}
+          />
+        </picture>
+        <h1 className="navigation">{data.data.attributes.Title}</h1>
 
-          <ReactMarkdown>{data.data.attributes.Content}</ReactMarkdown>
+        <div className="markdown-container">
+        <MarkdownComponent markdownContent={data.data.attributes.Content} />
+
+            
         </div>
       </div>
     </article>

@@ -11,7 +11,7 @@ const Articles: React.FC = () => {
   const { loading, data, error } = useFetch(
     `https://blog-personalblog.up.railway.app/api/posts?filters[categories]=${idCategory}&populate=*`
   );
-
+    console.log(data)
   const handleArticle = (id: any) => {
     navigation(`/article/${id}`);
   };

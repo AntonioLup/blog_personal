@@ -4,7 +4,7 @@
   border-radius: 4px;
   padding: 1rem;
   
-  margin: 0.3rem 0; 
+  
   p {
     margin: 0;
   }
@@ -83,7 +83,7 @@
   max-width: 100%; /* Para asegurarte de que el contenido no se desborde del contenedor */
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
   .articlewrapper {
     /* Estilos específicos para dispositivos móviles */
     flex-direction: column;
@@ -92,7 +92,7 @@
     /* Otros estilos para dispositivos móviles */
   }
   .picturearticle {
-   
+   padding: 1rem 1rem 1rem 0;
      img {
   
        width: 100%; 
