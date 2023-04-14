@@ -2,11 +2,8 @@ import React, { ReactNode, useEffect, useState } from "react";
 import "./styles/Article.scss";
 import { useNavigate } from "react-router-dom";
 import useFetch from "./hook/useFetch";
-import imgDefault from "../assets/aest.jpg";
 import LoadingComponent from "./Loading";
-import { fill } from "@cloudinary/url-gen/actions/resize";
-import { CloudinaryImage } from "@cloudinary/url-gen";
-import { AdvancedImage } from "@cloudinary/react";
+import { Toaster } from "react-hot-toast";
 
 const Articles: React.FC = () => {
   const navigation = useNavigate();
@@ -15,15 +12,10 @@ const Articles: React.FC = () => {
     `https://blog-personalblog.up.railway.app/api/posts?filters[categories]=${idCategory}&populate=*`
   );
 
-
   const handleArticle = (id: any) => {
     navigation(`/article/${id}`);
   };
 
-  useEffect(() => {
-    // Actualizar el título de la página
-    document.title = "Artículos";
-  }, []);
 
   const dataFetch =
     data &&
@@ -40,17 +32,10 @@ const Articles: React.FC = () => {
       const content = post?.attributes?.Content;
       console.log(imageUrl);
 
- 
-
       return (
         <div className="articlewrapper" key={post.id}>
           <picture className="picturearticle">
-            <img 
-            src={imageUrl} 
-            decoding="async" 
-            loading="lazy"
-            alt={title} 
-            />
+            <img src={imageUrl} decoding="async" loading="lazy" alt={title} />
           </picture>
           <div>
             <h3 onClick={() => handleArticle(post.id)}>{title}</h3>
@@ -84,6 +69,7 @@ const Articles: React.FC = () => {
         </span>
       </div>
       <div>{load}</div>
+      <Toaster position="bottom-right"  reverseOrder={false} />
     </div>
   );
 };

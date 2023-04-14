@@ -1,53 +1,55 @@
-.InfoAside{
+.InfoAside {
 
   display: flex;
-    
-  justify-content: flex-end;
-  align-content: flex-start;
-  flex: 1 1 50px;
+  justify-content: center;
+ align-items: flex-start;
+ flex: 1 ;
   margin: 0.4rem;
   flex-wrap: wrap;
-    .infocontainer{
-        padding: 1rem;
-        margin: 0.5rem;
-        width: 100%;
-        
-        outline: 1px solid rgba(255, 0, 0, 0.492);
+  
+  .infocontainer {
+    padding: 1rem;
+    margin: 0.5rem;
+
+    outline: 1px solid rgba(255, 0, 0, 0.492);
+    border-radius: 4px;
+
+    .formwrapper {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      input {
+        border: none;
+        outline: 1px solid;
+        margin: 0.5rem 0;
+        padding: 0.3rem;
         border-radius: 4px;
-
-        .formwrapper{
-            display: flex;
-            flex-direction: column;
-
-            input{
-                border: none;
-                outline: 1px solid;
-                margin: 0.5rem 0;
-                padding: 0.3rem;
-                border-radius: 4px;
-            }
-           .formparagraf{
-            width: 175px;
-            font-size:small;
-           }
-           .formbutton{
-            border: none;
-            outline: 1px solid #b33131ae;
-            padding: 7px 15px;
-            border-radius:14px;
-            transition: all 0.4s ease;
-            &:hover{
-                background-color: #b33131ae;
-                cursor: pointer;
-        
-            }
-           }
-        }
-
-    }
-
-    .infoparafra{
-       
+      }
+      .formparagraf {
+        width: 175px;
         font-size: small;
+      }
+      .formbutton {
+        border: none;
+        outline: 1px solid #b33131ae;
+        padding: 7px 15px;
+        border-radius: 14px;
+        transition: all 0.4s ease;
+        &:hover {
+          background-color: #b33131ae;
+          cursor: pointer;
+        }
+      }
     }
+  }
+
+  .infoparafra {
+    font-size: small;
+  }
+}
+.stikyinfo {
+  position: sticky;
+  top: 0;
+  
 }

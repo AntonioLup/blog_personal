@@ -3,6 +3,8 @@
   border: 1px solid rgba(255, 0, 0, 0.267);
   border-radius: 4px;
   padding: 1rem;
+  
+  margin: 0.3rem 0; 
   p {
     margin: 0;
   }
@@ -15,11 +17,13 @@
     }
   }
 }
+
 .picturearticle {
-  padding: 1rem;
+ padding: 1rem;
   img {
     border-radius: 4px;
-    width: 88px;
+    width: 60px; 
+    
   }
 }
 .categoria {
@@ -30,7 +34,7 @@
 .categorycheck{
   border: 1px solid rgba(255, 0, 0, 0.216);
   border-radius: 14px;
-  padding: 0.45rem;
+  padding:0.1rem 0.4rem ;
   margin: 0.3rem 0;
   transition: background-color 0.2s ease-in-out;
   &:hover{
@@ -54,7 +58,7 @@
 .buttonarticle {
   border: none;
   outline: 1px solid #b33131ae;
-  padding: 7px 15px;
+  padding: 7px 10px; 
   border-radius: 14px;
   transition: all 0.4s ease;
   margin: 1rem 0;
@@ -69,4 +73,30 @@
 }
 .activeT{
   background-color: #f00;
+}
+
+.react-markdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  line-height: 1.5; /* Ajusta el interlineado según tus necesidades */
+  max-width: 100%; /* Para asegurarte de que el contenido no se desborde del contenedor */
+}
+
+@media screen and (max-width: 425px) {
+  .articlewrapper {
+    /* Estilos específicos para dispositivos móviles */
+    flex-direction: column;
+    
+    
+    /* Otros estilos para dispositivos móviles */
+  }
+  .picturearticle {
+   
+     img {
+  
+       width: 100%; 
+       
+     }
+   }
 }

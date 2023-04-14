@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import toast from 'react-hot-toast';
 
 function useFetch(url: any) {
     const [data, setData] = useState<any>(null);
@@ -16,9 +17,16 @@ function useFetch(url: any) {
                 const jsonData = await response.json(); // Parse response as JSON
                 setData(jsonData); // Set fetched data to state
                 setLoading(false); // Set loading state to false
+                toast.success('Datos cargados!',  {
+                    duration: 2000,
+                    icon: '👏',
+                  })
             } catch (err) {
                 setError(String(err)); // Set error state with error message
                 setLoading(false); // Set loading state to false
+                toast.error('Error de la API!', {
+                    duration: 2000,
+                  })
             }
         };
 

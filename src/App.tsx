@@ -7,6 +7,7 @@ import ArticleDetails from "./components/ArticleDetails";
 import Error from "./components/404";
 
 const App = () => {
+  
   return (
     <BrowserRouter>
       <Routes>

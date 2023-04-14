@@ -5,7 +5,7 @@ import "./styles/Layout.scss"
 const Layout =() => {
   return (
     <div className="content">
-      {/* <Aside/> */}
+    
       <Outlet/>
     </div>
   )
