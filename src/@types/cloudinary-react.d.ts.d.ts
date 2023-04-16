@@ -4,3 +4,4 @@ declare module 'markdown-it-responsive';
 declare module "marked";
 declare module "markdown-it-regexp";
 declare module '@mdx-js/react' ;
+declare module 'locomotive-scroll';

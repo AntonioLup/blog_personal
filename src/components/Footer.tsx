@@ -11,7 +11,12 @@ const Footer: React.FC = () => {
         <ul>
           <li>
             <Link to="https://twitter.com/antoniolup1" target="_blank">
-              Mi  Twitter
+              Twitter
+            </Link>
+          </li>
+          <li>
+            <Link to="https://www.youtube.com/channel/UCYr9Wpf4G6gkBSbozkU3agQ" target="_blank">
+              Youtube
             </Link>
           </li>
         </ul>

@@ -1,0 +1,36 @@
+.dropdown-menu {
+    position: relative;
+    
+    display: inline-block;
+  }
+  
+  
+  .dropdown-menu__toggle i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-menu__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #f8f8f8;
+    transition: max-height 0.3s ease;
+    z-index: 1;
+  }
+  
+  .dropdown-menu__list.open {
+    max-height: 200px; /* Altura máxima del menú desplegable cuando está abierto */
+  }
+  
+  .dropdown-menu__item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu__item:hover {
+    background-color: #e0e0e0;
+  }

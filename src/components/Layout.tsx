@@ -3,7 +3,7 @@ import "./styles/Layout.scss"
 const Layout =() => {
   return (
     <div className="content">
-    
+      
       <Outlet/>
     </div>
   )

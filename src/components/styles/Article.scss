@@ -3,15 +3,14 @@
   border: 1px solid rgba(255, 0, 0, 0.267);
   border-radius: 4px;
   padding: 1rem;
-  
-  
+
   p {
     margin: 0;
   }
   h3 {
     margin: 0;
     transition: color 0.2s ease-out;
-    &:hover{
+    &:hover {
       cursor: pointer;
       color: #f00;
     }
@@ -19,29 +18,43 @@
 }
 
 .picturearticle {
- padding: 1rem;
+  padding: 1rem;
   img {
     border-radius: 4px;
-    width: 60px; 
-    
+    width: 60px;
   }
+}
+.categoriwrapper{
+  display: flex;
+  margin:  0.34rem;
 }
 .categoria {
   display: flex;
-  gap: 7px;
+  overflow: hidden;
+  padding: 0 0.2rem;
+  background-color: rgba(255, 0, 0, 0.136);
+  position: relative; /* Añade posición relativa */
+  
+  span{
+    white-space: nowrap;
+    margin: 0 0.2rem;
+    transition: transform 0.3s;
+
+  }
+
 }
 
-.categorycheck{
+.categorycheck {
   border: 1px solid rgba(255, 0, 0, 0.216);
   border-radius: 14px;
-  padding:0.1rem 0.4rem ;
+  padding: 0.1rem 0.4rem;
   margin: 0.3rem 0;
   transition: background-color 0.2s ease-in-out;
-  &:hover{
+  &:hover {
     cursor: pointer;
 
     background-color: rgba(255, 0, 0, 0.34);
-}
+  }
 }
 
 @keyframes fadeInOut {
@@ -58,7 +71,7 @@
 .buttonarticle {
   border: none;
   outline: 1px solid #b33131ae;
-  padding: 7px 10px; 
+  padding: 7px 10px;
   border-radius: 14px;
   transition: all 0.4s ease;
   margin: 1rem 0;
@@ -71,7 +84,7 @@
   background-color: #f00; /* Cambia el color de fondo a tu elección */
   color: #fff; /* Cambia el color de texto a tu elección */
 }
-.activeT{
+.activeT {
   background-color: #f00;
 }
 
@@ -87,16 +100,13 @@
   .articlewrapper {
     /* Estilos específicos para dispositivos móviles */
     flex-direction: column;
-    
-    
+
     /* Otros estilos para dispositivos móviles */
   }
   .picturearticle {
-   padding: 1rem 1rem 1rem 0;
-     img {
-  
-       width: 100%; 
-       
-     }
-   }
+    padding: 1rem 1rem 1rem 0;
+    img {
+      width: 100%;
+    }
+  }
 }

@@ -11,11 +11,10 @@ const Articles: React.FC = () => {
   const { loading, data, error } = useFetch(
     `https://blog-personalblog.up.railway.app/api/posts?filters[categories]=${idCategory}&populate=*`
   );
-    console.log(data)
+  console.log(data);
   const handleArticle = (id: any) => {
     navigation(`/article/${id}`);
   };
-
 
   const dataFetch =
     data &&
@@ -44,33 +43,38 @@ const Articles: React.FC = () => {
         </div>
       );
     });
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const load = loading ? <LoadingComponent /> : dataFetch;
   return (
-    <div>
-      <div className="categoria">
-        <span
-          onClick={() => setIdCategory(3)}
-          className={`${idCategory == 3 && "activeT"} categorycheck`}
-        >
-          WordPress
-        </span>
-        <span
-          onClick={() => setIdCategory(2)}
-          className={`${idCategory == 2 && "activeT"} categorycheck`}
-        >
-          StartUp
-        </span>
-        <span
-          onClick={() => setIdCategory(1)}
-          className={`${idCategory == 1 && "activeT"} categorycheck`}
-        >
-          React
-        </span>
+    <>
+      <div className="categoriwrapper">
+        <div className="categoria">
+          <div style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+            <span
+              onClick={() => setIdCategory(3)}
+              className={`${idCategory == 3 && "activeT"} categorycheck`}
+            >
+              WordPress
+            </span>
+            <span
+              onClick={() => setIdCategory(2)}
+              className={`${idCategory == 2 && "activeT"} categorycheck`}
+            >
+              StartUp
+            </span>
+            <span
+              onClick={() => setIdCategory(1)}
+              className={`${idCategory == 1 && "activeT"} categorycheck`}
+            >
+              React
+            </span>
+          </div>
+        </div>
       </div>
       <div>{load}</div>
-      <Toaster position="bottom-right"  reverseOrder={false} />
-    </div>
+      <Toaster position="bottom-right" reverseOrder={false} />
+    </>
   );
 };
 

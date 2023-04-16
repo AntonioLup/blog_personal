@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Nav.scss";
-import { Link, NavLink } from "react-router-dom";
-const Nav: React.FC = () => {
+
+const Nav: React.FC  = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
     // Obtener el estado del modo oscuro desde el localStorage al cargar la página
     const storedDarkMode = localStorage.getItem("darkMode");
     return storedDarkMode === "true";
   });
 
+ 
   useEffect(() => {
     // Guardar el estado del modo oscuro en el localStorage al cambiar
     // el estado de isDarkMode
@@ -39,7 +40,7 @@ const Nav: React.FC = () => {
         <li>👨</li>
         <li>🛒</li>
         <li>
-          <button className="" onClick={() => null}>
+          <button className="buttonnav" >
             Menu
           </button>
         </li>
