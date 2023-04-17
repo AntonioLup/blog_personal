@@ -1,13 +1,15 @@
 .footer{
     display: flex;
-    justify-content: space-evenly;
-    flex: 1 ;
-    padding: 2rem;
+    justify-content: center;
+    gap: 10px;
+    
+    padding: 1rem 0;
     flex-wrap: wrap;
 
     ul{
         display: flex;
         gap: 14px;
+        justify-content: center;
 
         li{
             list-style-type: none;
@@ -17,6 +19,8 @@
                 color:aqua;
                 cursor: pointer;
             }
+
+           
         }
     }
 }

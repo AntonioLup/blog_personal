@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Nav.scss";
+import DropdownMenu from "./Dropdown";
 
 const Nav: React.FC  = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
@@ -7,6 +8,7 @@ const Nav: React.FC  = () => {
     const storedDarkMode = localStorage.getItem("darkMode");
     return storedDarkMode === "true";
   });
+  const [isOpen ,setIsOpen] = useState<boolean>(false);                                        
 
  
   useEffect(() => {
@@ -21,7 +23,14 @@ const Nav: React.FC  = () => {
     // Cambiar el estado del modo oscuro
     setIsDarkMode(!isDarkMode);
   };
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
+    <>
+   
     <nav className="navwrapper">
       <ul className="navlist">
       
@@ -37,15 +46,17 @@ const Nav: React.FC  = () => {
             {isDarkMode ? "🌚" : "🌞"}
           </button>
         </li>
-        <li>👨</li>
-        <li>🛒</li>
+        <li className="media">👨</li>
+        <li className="media">🛒</li>
         <li>
-          <button className="buttonnav" >
+          <button onClick={() => toggle()} className="buttonnav" >
             Menu
           </button>
         </li>
       </ul>
     </nav>
+      <DropdownMenu isOpen={isOpen}/>
+    </>
   );
 };
 

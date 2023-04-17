@@ -47,5 +47,9 @@ body.dark {
 h1 {
   font-size: 2.5em;
   line-height: 1.1;
+
+  @media screen and (max-width: 425px) {
+    font-size: 1.3em;
+  }
 }
 

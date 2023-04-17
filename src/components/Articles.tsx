@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import "./styles/Article.scss";
 import { useNavigate } from "react-router-dom";
 import useFetch from "./hook/useFetch";
@@ -44,18 +44,32 @@ const Articles: React.FC = () => {
       );
     });
   const [activeIndex, setActiveIndex] = useState(0);
+  const carouselRef = useRef<any>(null); // Ref para acceder al contenedor del carousel
+
+  // Función para mover el carousel a la izquierda
+  const handlePrev = () => {
+    carouselRef.current.scrollLeft -= carouselRef.current.offsetWidth;
+  };
+
+  // Función para mover el carousel a la derecha
+  const handleNext = () => {
+    carouselRef.current.scrollLeft += carouselRef.current.offsetWidth;
+  };
 
   const load = loading ? <LoadingComponent /> : dataFetch;
   return (
     <>
       <div className="categoriwrapper">
-        <div className="categoria">
+          <button className="prev-button" onClick={handlePrev}>
+            Prev
+          </button>
+        <div ref={carouselRef} className="categoria">
           <div style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
             <span
-              onClick={() => setIdCategory(3)}
-              className={`${idCategory == 3 && "activeT"} categorycheck`}
+              onClick={() => setIdCategory(1)}
+              className={`${idCategory == 1 && "activeT"} categorycheck`}
             >
-              WordPress
+              React
             </span>
             <span
               onClick={() => setIdCategory(2)}
@@ -64,13 +78,16 @@ const Articles: React.FC = () => {
               StartUp
             </span>
             <span
-              onClick={() => setIdCategory(1)}
-              className={`${idCategory == 1 && "activeT"} categorycheck`}
+              onClick={() => setIdCategory(3)}
+              className={`${idCategory == 3 && "activeT"} categorycheck`}
             >
-              React
+              WordPress
             </span>
           </div>
         </div>
+          <button className="next-button" onClick={handleNext}>
+            Next
+          </button>
       </div>
       <div>{load}</div>
       <Toaster position="bottom-right" reverseOrder={false} />
