@@ -1,0 +1,24 @@
+.dropdown{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ca7878;
+  position: absolute;
+  align-items: flex-end;
+  top: -235px;
+  left: 0; /* Ajusta el valor de left y right para que el menú se ajuste correctamente dentro del ancho del contenedor padre */
+  right: 0;
+  width: 100%;
+  min-height: 15rem;
+  z-index: 1;
+  transition: top 0.3s cubic-bezier(0.51,-0.15, 0.22, 1);
+  ul{
+    li{
+      list-style: none;
+      padding: 0.4rem;
+    }
+  }
+
+  &.open{
+    top: 0;
+  }
+}

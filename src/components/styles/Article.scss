@@ -24,9 +24,9 @@
     width: 60px;
   }
 }
-.categoriwrapper{
+.categoriwrapper {
   display: flex;
-  margin:  0.34rem;
+  margin: 0.34rem;
 }
 .categoria {
   display: flex;
@@ -36,15 +36,16 @@
   border-radius: 4px;
   background-color: rgba(255, 0, 0, 0.136);
   position: relative; /* Añade posición relativa */
-  
-  span{
+
+  span {
     white-space: nowrap;
     margin: 0 0.2rem;
     padding: 0.5rem;
     transition: transform 0.3s;
-
   }
-
+  @media screen and (max-width: 375px) {
+    width: 125px;
+  }
 }
 
 .categorycheck {
