@@ -60,7 +60,7 @@ const Articles: React.FC = () => {
   return (
     <>
       <div className="categoriwrapper">
-          <button className="prev-button" onClick={handlePrev}>
+          <button className="button" onClick={handlePrev}>
             Prev
           </button>
         <div ref={carouselRef} className="categoria">
@@ -85,8 +85,9 @@ const Articles: React.FC = () => {
             </span>
           </div>
         </div>
-          <button className="next-button" onClick={handleNext}>
+          <button className="button" onClick={handleNext}>
             Next
+            
           </button>
       </div>
       <div>{load}</div>
