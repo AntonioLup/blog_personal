@@ -8,11 +8,8 @@ import Logo from "../assets/react.svg";
 import Articles from "./Articles";
 import DropdownMenu from "./Dropdown";
 import { useState } from "react";
-interface MainContent {
-  isOpen: boolean; // Especificar el tipo booleano para isOpen
-  setIsOpen: boolean; // Especificar el tipo
-}
-const HomePage: React.FC<MainContent> = () => {
+
+const HomePage: React.FC = () => {
   return (
     <>
       <div className="grid-container">
