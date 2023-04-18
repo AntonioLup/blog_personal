@@ -4,12 +4,10 @@
   justify-content: center;
  align-items: flex-start;
  flex: 1 ;
-  margin: 0.4rem;
   flex-wrap: wrap;
   
   .infocontainer {
     padding: 1rem;
-    margin: 0.5rem;
 
     outline: 1px solid rgba(255, 0, 0, 0.492);
     border-radius: 4px;
@@ -50,6 +48,6 @@
 }
 .stikyinfo {
   position: sticky;
-  top: 0;
+  top: 6px;
   
 }

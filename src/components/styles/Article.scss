@@ -26,13 +26,13 @@
 }
 .categoriwrapper {
   display: flex;
-  margin: 0.34rem;
+  margin:  0.4rem 0;
 }
 .categoria {
   display: flex;
   overflow: hidden;
   width: 150px;
-  padding: 0.5rem 0.2rem;
+  padding: 0.4rem 0.2rem;
   border-radius: 4px;
   position: relative; /* Añade posición relativa */
 
@@ -51,7 +51,7 @@
   border: 1px solid rgba(255, 0, 0, 0.216);
   border-radius: 14px;
   padding: 0.1rem 0.4rem;
-  margin: 0.3rem 0;
+  margin: 0.2rem 0;
   transition: background-color 0.2s ease-in-out;
   &:hover {
     cursor: pointer;
@@ -100,8 +100,10 @@
 }
 
 .button{
+  display: flex;
+  align-items: center;
   border-radius: 50%;
-  padding: 0.4rem;
+  padding: 0 0.85rem;
   background-color: transparent;
   color: inherit;
   border: 1px solid #fff;

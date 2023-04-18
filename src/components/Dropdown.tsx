@@ -15,13 +15,13 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ isOpen }) => {
       <div>
         <ul>
         <li>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"}>🏠 Home</Link>
           </li>
           <li>
-            <Link to={"/about"}>About</Link>
+            <Link to={"/about"}>👨 About</Link>
           </li>
           <li>
-            <Link to={"/service"}>Service</Link>
+            <Link to={"/service"}>🛒 Service</Link>
           </li>
         </ul>
       </div>

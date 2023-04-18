@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Nav.scss";
 import DropdownMenu from "./Dropdown";
+import { Link } from "react-router-dom";
 
 const Nav: React.FC  = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
@@ -46,14 +47,16 @@ const Nav: React.FC  = () => {
             {isDarkMode ? "🌚" : "🌞"}
           </button>
         </li>
-        <li className="media">👨</li>
-        <li className="media">🛒</li>
-        <li>
+        <li className="media"><Link to={"/"}>🏠</Link> </li>
+        <li className="media"><Link to={"/about"}>👨</Link> </li>
+        <li className="media"><Link to={"/service"}>🛒</Link> </li>
+        <li className="menu-media">
           <button onClick={() => toggle()} className="buttonnav" >
             Menu
           </button>
         </li>
       </ul>
+
     </nav>
       <DropdownMenu isOpen={isOpen}/>
     </>

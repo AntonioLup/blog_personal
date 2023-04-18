@@ -61,7 +61,7 @@ const Articles: React.FC = () => {
     <>
       <div className="categoriwrapper">
           <button className="button" onClick={handlePrev}>
-            Prev
+          {"<"}
           </button>
         <div ref={carouselRef} className="categoria">
           <div style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
@@ -69,7 +69,7 @@ const Articles: React.FC = () => {
               onClick={() => setIdCategory(1)}
               className={`${idCategory == 1 && "activeT"} categorycheck`}
             >
-              React
+              React 
             </span>
             <span
               onClick={() => setIdCategory(2)}
@@ -86,7 +86,7 @@ const Articles: React.FC = () => {
           </div>
         </div>
           <button className="button" onClick={handleNext}>
-            Next
+            {">"}
             
           </button>
       </div>
